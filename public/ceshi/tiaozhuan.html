@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script src="../common/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<a href="http://www.baidu.com"  class="wl"  target="_blank">
+<img src="https://pics5.baidu.com/feed/342ac65c10385343fe64b13d1178687bcb8088f7.jpeg?token=b60d6978649632cfe1324f2707015513&s=D5A225BB4EF2709A4C3C9C6A03001031" alt="百度链接" />
+点击图片第三方链接提示跳转</a>
+<h3>车舝</h3>
+<p>间关车之舝兮，思娈季女逝兮。匪饥匪渴，德音来括。虽无好友？式燕且喜。</p>
+<p>依彼平林，有集维鷮。辰彼硕女，令德来教。式燕且誉，好尔无射。</p>
+<p>虽无旨酒？式饮庶几。虽无嘉肴？式食庶几。虽无德与女？式歌且舞？</p>
+<p>陟彼高冈，析其柞薪。析其柞薪，其叶湑兮。鲜我觏尔，我心写兮。</p>
+<p>高山仰止，景行行止。四牡騑騑，六辔如琴。觏尔新婚，以慰我心。</p>
+<script language="JavaScript" src="../common/tiaozhuan.js"></script>
+<script type="text/javascript">
+var caution=false
+function setCookie(name,value,expires,path,domain,secure) 
+{
+ var curCookie=name+"="+escape(value) +
+ ((expires)?";expires="+expires.toGMTString() : "") +
+ ((path)?"; path=" + path : "") +
+ ((domain)? "; domain=" + domain : "") +
+ ((secure)?";secure" : "")
+ if(!caution||(name + "=" + escape(value)).length <= 4000)
+ {
+ document.cookie = curCookie
+ }
+ else if(confirm("Cookie exceeds 4KB and will be cut!"))
+ {
+ document.cookie = curCookie
+ }
+}
+function getCookie(name) 
+{
+ var prefix = name + "="
+ var cookieStartIndex = document.cookie.indexOf(prefix)
+ if (cookieStartIndex == -1)
+ {
+ return null
+ }    
+ var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+ if(cookieEndIndex == -1)
+ {
+ cookieEndIndex = document.cookie.length
+ }
+ return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+}
+function deleteCookie(name, path, domain) 
+{
+ if(getCookie(name)) 
+ {
+ document.cookie = name + "=" + 
+ ((path) ? "; path=" + path : "") +
+ ((domain) ? "; domain=" + domain : "") +
+ "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+ }
+}
+function fixDate(date) 
+{
+ var base=new Date(0)
+ var skew=base.getTime()
+ if(skew>0)
+ {
+ date.setTime(date.getTime()-skew)
+ }    
+}
+var now=new Date()
+fixDate(now)
+now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if(!visits)
+{
+ visits=1;
+}  
+else
+{
+ visits=parseInt(visits)+1;
+}  
+setCookie("counter", visits, now)
+document.write("您是到访的第" + visits + "位用户！")
+</script>
+</body>
+</html>

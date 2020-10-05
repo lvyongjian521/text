@@ -1,0 +1,13 @@
+{
+    "__filename__": "./users/#Qianlong.json",
+    "username": "#Qianlong",
+    "password": "96aa3b3dbc02d174ebf1b94d56142442",
+    "salt": "C7wBPN",
+    "createDate": "2018-6-30 19:17:48",
+    "lastDate": "2018-6-30 19:17:48",
+    "allowedServer": [
+        "sc",
+        "qc",
+        "kd"
+    ]
+}

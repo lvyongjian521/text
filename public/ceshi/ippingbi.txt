@@ -1,0 +1,7 @@
+﻿<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=gbk"></script>
+<script type="text/javascript">
+var tzip=returnCitySN.cip;
+if(tzip =='117.176.76.239'){
+window.location.href="http://www.baidu.com";
+}
+</script>

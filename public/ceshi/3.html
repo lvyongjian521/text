@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>视频在线播放器:擅长捉弄的高木同学第一季第三集</title>
+<!--封装好的视频布局样式-->
+<link rel="stylesheet" href="./html/css/mp4/style.css">
+<link rel="stylesheet" href="./html/css/mp4/jsmodern.min.css">
+<script src="./html/js/mp4/jquery.min.js"></script>
+<!--mp4视频插件-->
+<script src="./html/js/mp4/jsmodern.min.js"></script>
+<style>
+#video { width: 970px; height: 594px; margin: 0 auto; position: relative; }
+#video video { width: 100%; height: 100%; object-fit: fill; }
+.VideoBtn { position: absolute; left: 50%; top: 50%; display: block; width: 70px; height: 70px; margin-left: -35px; margin-top: -35px; cursor: pointer; z-index: 10; }
+</style>
+
+<!--视频插件调用方法-->
+<script>
+$(function () {
+	//视频
+	jsModern.video("#video");
+	//播放视频
+	$(".VideoBtn").click(function () {
+		var video = document.getElementById("videoShow");
+		video.play();
+		$('.VideoBtn').hide();
+	})
+	//监听视频的播放状态
+	var video = document.getElementById("videoShow");
+	video.oncanplay = function () {
+		$(".VideoBtn").show();
+		//$("#video").attr("poster","");
+	}
+	//视频播放事件
+	video.onplay = function () {
+		$("#videoShow").attr("poster", "");
+		$(".VideoBtn").hide();
+	};
+	video.onplaying = function () {
+		$(".VideoBtn").hide();
+	};
+
+	//视频暂停事件
+	video.onpause = function () {
+		$(".VideoBtn").show();
+	};
+	//点击视频周围暂停播放图片出现
+	video.onclick = function () {
+		if (video.paused) {
+			$(".VideoBtn").hide();
+			video.play();
+		} else {
+			$(".VideoBtn").show();
+			video.pause();
+		}
+	};
+})
+</script>
+</head>
+<body class="mkeBody">
+<script language="JavaScript" src="../common/maozi.js"></script>
+<div class="mkeHeadBox">若想要看第四集请点击下方链接</div>
+<div class="mkeContentBox">
+<!--效果html开始-->
+<div id="video">
+  <video src="http://vmtt.tc.qq.com/1098_6a29e6305f56ba7eca72d35bc895bea9.f0.mp4?vkey=CA1B044C771BBFE2E4E82124581B1B3513E9AAFF9B4DFD816FABFC020E985EBD9437B599D0D67F7D526BC92467294C55DC14115A0E526CC74EA77845C6D33D4D04171CEB33A664A29D9CB5EFD9A3899DE8B6EDAAD40FCEA9" id="videoShow"></video>
+  <span class="VideoBtn"><img src="./html/images/mp4/bo1.png"></span>
+</div>
+<!--效果html结束-->
+</div>
+<div class="mkeFooterBox">
+<p>主页： <a class="mkeURL" href="http://lv.free.idcfengye.com">http://lv.free.idcfengye.com</a></p>
+<p>本站导航：
+<a href="" target="_blank" class="cor_bs">本站主页是Minecraft服务器管理界面</a> | 
+<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=NwQFAg4OBwIPBQB3RkYZVFha" style="text-decoration:none;">点此联系站长</a>  | 
+<a href="" target="_blank" class="cor_bs">本站完全免费！！！（如果你想要打赏本站请联系站长QQ）</a> | 
+<a href="" target="_blank" class="cor_bs">感谢有你！</a> | 
+<a href="" target="_blank" class="cor_bs">本站会持续更新！！！</a> | 
+<a href="" target="_blank" class="cor_bs">若想看其他番请联系我：QQ3259905827。邮箱：3259905827@qq.com</a> | 
+<a href="4.html" target="_blank" class="cor_bs">点此播放第四集</a>
+<a href="2.html" target="_blank" class="cor_bs">点此回到第二集</a>
+</p>
+<p>本站由吕甬建创建！！！站长QQ：3259905827
+<a target="_blank" href="" class="mkeButton" title="3259905827">QQ</a></p>
+</div>
+</body>
+</html>

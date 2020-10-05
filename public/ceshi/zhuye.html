@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>测试插件及特效.站长QQ：3259905827</title>
+    <link rel="stylesheet" href="html/css/yanjing.css">
+  </head>
+  <body>
+    <div class="eyes">
+      <div class="eye">
+        <div class="ball"></div>
+      </div>
+     <script language="JavaScript" src="maozi.js"></script>
+      <div class="eye">
+        <div class="ball"></div>
+      </div>
+	  <a href="" >刷新</e>
+	  <a href="wenjianshangchuan.html" >上传</e>
+	  <a href="tingge.html" >听歌</e>
+	  <a href="texiao.html" >特效</e>
+	  <a href="wangge.html" >网格</e>
+	  <a href="saolei.html" >扫雷</e>
+	  <a href="huadongyanzheng.html" >滑动解锁</e>
+	  <a href="" > </e>
+	  <a href="" > </e>
+	  <a href="" > </e>
+	  <a href="" > </e>
+	  <marquee direction="">
+    </div>
+	</div>
+<div class="footer">
+	<p> © 2020 3259905827 All Rights Reserved. <a href="http://mail.qq.com/cgi-bin/frame_html?sid=z_wFYFduu-XUgEId&from="> QQ:3259905827</a></p>
+</div>
+
+<script type="text/javascript">
+  var balls = document.getElementsByClassName("ball");
+  document.onmousemove = function(){
+    var x = event.clientX * 100 / window.innerWidth + "%";
+    var y = event.clientY * 100 / window.innerHeight + "%";
+
+    for(var i=0;i<2;i++){
+      balls[i].style.left = x;
+      balls[i].style.top = y;
+      balls[i].style.transform = "translate(-" + x +",-" + y +")";
+    }
+  }
+</script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>视频在线播放器</title>
+<!--封装好的视频布局样式-->
+<link rel="stylesheet" href="html/css/mp4/style.css">
+<link rel="stylesheet" href="html/css/mp4/jsmodern.min.css">
+<script src="html/js/mp4/jquery.min.js"></script>
+<!--mp4视频插件-->
+<script src="html/js/mp4/jsmodern.min.js"></script>
+<style>
+#video { width: 970px; height: 594px; margin: 0 auto; position: relative; }
+#video video { width: 100%; height: 100%; object-fit: fill; }
+.VideoBtn { position: absolute; left: 50%; top: 50%; display: block; width: 70px; height: 70px; margin-left: -35px; margin-top: -35px; cursor: pointer; z-index: 10; }
+</style>
+
+<!--视频插件调用方法-->
+<script>
+$(function () {
+	//视频
+	jsModern.video("#video");
+	//播放视频
+	$(".VideoBtn").click(function () {
+		var video = document.getElementById("videoShow");
+		video.play();
+		$('.VideoBtn').hide();
+	})
+	//监听视频的播放状态
+	var video = document.getElementById("videoShow");
+	video.oncanplay = function () {
+		$(".VideoBtn").show();
+		//$("#video").attr("poster","");
+	}
+	//视频播放事件
+	video.onplay = function () {
+		$("#videoShow").attr("poster", "");
+		$(".VideoBtn").hide();
+	};
+	video.onplaying = function () {
+		$(".VideoBtn").hide();
+	};
+
+	//视频暂停事件
+	video.onpause = function () {
+		$(".VideoBtn").show();
+	};
+	//点击视频周围暂停播放图片出现
+	video.onclick = function () {
+		if (video.paused) {
+			$(".VideoBtn").hide();
+			video.play();
+		} else {
+			$(".VideoBtn").show();
+			video.pause();
+		}
+	};
+})
+</script>
+</head>
+<body class="mkeBody">
+<div class="mkeHeadBox">视频在线播放器</div>
+<div class="mkeContentBox">
+<!--效果html开始-->
+<div id="video">
+  <video src="http://vmtt.tc.qq.com/1098_74ca8d78e48a24dd08c8968d2005fde9.f0.mp4?vkey=22A0C9003784CEDE3DDC7BD8A72FF4797EA2CEF1D0E36FF15E6F8B8ED217B8A361A10DDD605C9BE2CB70A942165B9BDBC40E517460902ED87D55427DED150B268D5F2AB90061D29FF23D274EFABBA57E334109677109826C" id="videoShow"></video>
+  <span class="VideoBtn"><img src="html/images/mp4/bo1.png"></span>
+</div>
+<!--效果html结束-->
+</div>
+<div class="mkeFooterBox">
+<p>主页： <a class="mkeURL" href="http://lv.free.idcfengye.com">http://lv.free.idcfengye.com</a></p>
+<p>本站导航：
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a>
+</p>
+<p>123123123123
+<a target="_blank" href="" class="mkeButton" title="3259905827">QQ</a></p>
+</div>
+</body>
+</html>

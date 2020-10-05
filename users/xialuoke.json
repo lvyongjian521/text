@@ -1,0 +1,9 @@
+{
+    "__filename__": "./users/xialuoke.json",
+    "username": "xialuoke",
+    "password": "4ac753ad8aa4506411eba1452d7b9999",
+    "salt": "7clBsf",
+    "createDate": "2020-10-3 19:17:18",
+    "lastDate": "2020-10-3 19:20:05",
+    "allowedServer": []
+}

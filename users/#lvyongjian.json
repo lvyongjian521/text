@@ -1,0 +1,11 @@
+{
+    "__filename__": "./users/#lvyongjian.json",
+    "username": "#lvyongjian",
+    "password": "8937951aaaf355943e4da087442ba0d4",
+    "salt": "8MaExR",
+    "createDate": "2020-9-13 11:52:10",
+    "lastDate": "2020-10-3 10:47:52",
+    "allowedServer": [
+        "text"
+    ]
+}

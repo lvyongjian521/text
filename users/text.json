@@ -1,0 +1,9 @@
+{
+    "__filename__": "./users/text.json",
+    "username": "text",
+    "password": "886009d6c024bbc417dbcc358f7c5415",
+    "salt": "ubTAYd",
+    "createDate": "2020-9-29 15:53:55",
+    "lastDate": "2020-10-2 20:32:21",
+    "allowedServer": []
+}

@@ -1,0 +1,12 @@
+{
+    "__filename__": "./core/info.json",
+    "counterData": {
+        "csrfCounter": 17,
+        "login": 41,
+        "userOnlineCounter": 7,
+        "passwordError": 20,
+        "notPermssionCounter": 1,
+        "maybeLogin": 0
+    },
+    "reloadMonth": 11
+}

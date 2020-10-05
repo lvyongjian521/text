@@ -1,0 +1,9 @@
+{
+    "__filename__": "./users/admin_lvyongjian.json",
+    "username": "admin_lvyongjian",
+    "password": "d02caef22341a54277dfe3d1a00e0c3c",
+    "salt": "8br0Rx",
+    "createDate": "2020-9-13 11:50:48",
+    "lastDate": "2020-9-20 13:57:58",
+    "allowedServer": []
+}

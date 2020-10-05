@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "lvyongjian.free.idcfengye.com">
+<html xmlns="lvyongjian.free.idcfengye.com">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>扫雷游戏</title>
+<link rel="stylesheet" type="text/css" href="html/css/saolei/style.css" />
+<script type="text/javascript" src="html/js/saolei/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="html/js/saolei/jquery.randrange.js"></script>
+<script type="text/javascript" src="html/js/saolei/jquery.repeatstring.js"></script>
+<script type="text/javascript" src="html/js/saolei/jquery.randomfilter.js"></script>
+<script type="text/javascript" src="html/js/saolei/jquery.near.js"></script>
+<script type="text/javascript" src="html/js/saolei/jquery.minesweeper.js"></script>
+<script language="JavaScript" src="../../common/maozi.js"></script>
+<script type="text/javascript">
+// When the DOM is ready, build the mine sweeper game.
+   (function( $ ){
+
+	var mineSweerper = new MineSweeper(
+		$( "table.mine-sweeper" ),
+		10,
+		10,				
+			"10%"
+		
+	);
+
+});
+
+</script>
+</head>
+<body class="keBody">
+<h1 class="keTitle">扫雷游戏</h1>
+<div class="kePublic">
+<!--效果html开始-->
+<center>
+  <table cellspacing="2" class="mine-sweeper">
+    <tbody>
+      <tr>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="active">&nbsp;</td>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="">1</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="active">&nbsp;</td>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="active">&nbsp;</td>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active bomb">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+        <td class="active">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+</center>
+<!--效果html结束-->
+<div class="clear"></div>
+</div>
+<div class="keBottom">
+<p class="keTxtP">回主页 <a class="keUrl" href="lvyongjian.free.idcfengye.com" target="_blank">lvyongjian.free.idcfengye.com</a></p>
+<p class="keTxtP">主页：
+<a href="http://lv.free.idcfengye.com" target="_blank" class="cor_bs">主页</a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a>
+</p>
+<p class="keTxtP">＊站长QQ3259905827
+<a target="_blank" href="" class="button red" title="3259905827">QQ</a></p>
+</div>
+</body>
+</html>

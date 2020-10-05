@@ -1,0 +1,9 @@
+{
+    "__filename__": "./users/#master.json",
+    "username": "#master",
+    "password": "0b643354473e8f8b02bfcfb55c05f22a",
+    "salt": "KGaZjM",
+    "createDate": "2018-6-14 16:34:29",
+    "lastDate": "2018-6-14 16:38:41",
+    "allowedServer": []
+}

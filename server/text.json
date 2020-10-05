@@ -1,0 +1,21 @@
+{
+    "__filename__": "./server/text.json",
+    "name": "text",
+    "createDate": "2020-9-13 13:23:43",
+    "lastDate": "2020-9-13 14:29:38",
+    "ie": "GBK",
+    "oe": "GBK",
+    "autoRestart": false,
+    "schedule": [],
+    "addCmd": [
+        ""
+    ],
+    "java": "java",
+    "jarName": "CatServer-3440193-universal.jar",
+    "Xmx": "2800m",
+    "Xms": "512m",
+    "cwd": "E:/MC",
+    "highCommande": "",
+    "run": true,
+    "serverName": "text"
+}

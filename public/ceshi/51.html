@@ -1,0 +1,308 @@
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="content-language" content="zh-CN">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="applicable-device" content="pc,mobile">
+<meta name="robots" content="all">
+<meta name="save" content="history">
+<meta name="Copyright" content="51qianduan">
+<title>js点线几何空间图形特效代码下载演示</title>
+<meta name="keywords" content="点线几何演示,空间图形演示">
+<meta name="description" content="效果演示：js点线几何空间图形特效代码下载演示以及提供点线几何演示、空间图形演示等js/jquery网页特效代码演示和下载。">
+<script>
+var siteUrl = "https://www.51qianduan.com/";//网站网址
+var siteUserid = 24850; //网站用户ID
+var siteUsername = " "; //网站用户名
+var siteUserface = "0/24/24850.jpg"; //网站用户头像
+if(siteUserface == ""){
+siteUserface = siteUrl+"public/images/user_normal.jpg";
+}else{
+siteUserface = "https://www.51qianduan.com/cache/user/0/24/120/24850.jpg";
+}
+</script>
+<script src="jquery.min.js" type="text/javascript"></script>
+<script src="jquery.js" type="text/javascript"></script>
+<!--[if IE]>
+<style type="text/css">
+	li.remove_frame a {
+		padding-top: 5px;
+		background-position: 0px -3px;
+	}
+</style>
+<![endif]-->
+<script type="text/javascript">
+$(document).ready(function () {
+	function fixHeight() {
+		var headerHeight = $("#switcher").height();
+		if($(window).width() < 870){//判断页面宽度，手机版的时候则全部内容
+			$("#iframe").attr("height", $(window).height()+ "px");
+			//$("#by").attr("style", "height:"+$(window).height()+ "px");
+		}else{
+			$("#iframe").attr("height", $(window).height()-54+ "px");
+		}
+	}
+	$(window).resize(function () {
+		fixHeight();
+	}).resize();
+
+	$('.icon-pc').addClass('active');
+
+	$(".icon-mobile").click(function () {
+		$("#by").css("overflow-y", "auto");
+		$('#iframe-wrap').removeClass().addClass('mobile-width');
+		$('.icon-ipad,.icon-pc,.icon-mobile').removeClass('active');
+		$(this).addClass('active');
+		return false;
+	});
+
+
+	$(".icon-ipad").click(function () {
+		$("#by").css("overflow-y", "auto");
+		$('#iframe-wrap').removeClass().addClass('ipad-width');
+		$('.icon-ipad,.icon-pc,.icon-mobile').removeClass('active');
+		$(this).addClass('active');
+		return false;
+	});
+
+	$(".icon-pc").click(function () {
+		$("#by").css("overflow-y", "hidden");
+		$('#iframe-wrap').removeClass().addClass('full-width');
+		$('.icon-ipad,.icon-pc,.icon-mobile').removeClass('active');
+		$(this).addClass('active');
+		return false;
+	});
+});
+</script>
+<script type="text/javascript">
+function Responsive() {
+	if ( == true) $("#equipment").css("opacity", "100");
+	if ( == false) $("#equipment").css("opacity", "0");
+	$('#iframe-wrap').removeClass().addClass('full-width');
+	$('.icon-ipad,.icon-pc,.icon-mobile').removeClass('active');
+	$(this).addClass('active');
+	return false;
+};
+</script>
+<script type="text/javascript">
+//iframe内部禁止方法
+window.onload=function(){
+
+  document.getElementById('iframe').contentDocument.onkeydown = function(ev){
+	 
+	//禁止保存ctrl+s
+	if (ev && (ev.ctrlKey || ev.metaKey) && (ev.keyCode == 83)) {
+		alert("本站禁止了此功能，请您下载后，在查看代码！");
+		return false;
+	}
+	//禁止F12等等~~
+    if(ev && (ev.keyCode == 123 || ev.keyCode == 8 || ev.keyCode == 9 || ev.keyCode == 13) ) {
+	    alert("本站禁止了此功能，请您下载后，在查看代码！");
+	    return false;
+    }	
+
+	
+  }
+  //禁止右键
+  document.getElementById('iframe').contentDocument.oncontextmenu = function(){ 
+    alert("本站禁止了此功能，请您下载后，在查看代码！");
+    return false;
+  } 
+  
+}
+
+
+//iframe外部禁止
+document.onkeydown = function(){/*9:Tab键, 17：Control键, 18:Alt键, 123:F12键, 83:S键*/
+	
+    //禁止保存ctrl+s
+	if (window.event && (window.event.ctrlKey || window.event.metaKey) && (window.event.keyCode == 83)) {
+		alert("本站禁止了此功能，请您下载后，在查看代码！");
+		return false;
+	}
+	
+	//禁止F12等等~~
+if(window.event && (window.event.keyCode == 123 || window.event.keyCode == 8 || window.event.keyCode == 9 || window.event.keyCode == 13)) {
+        alert("本站禁止了此功能，请您下载后，在查看代码！");
+        window.event.returnValue=false;
+    }
+}
+
+
+//屏蔽右键
+document.oncontextmenu = function (event){
+    if(window.event){
+    event = window.event;
+    }
+    try{
+    var the = event.srcElement;
+        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+        return false;
+        }
+        return true;
+    }
+    catch (e){
+        return false;
+    }
+}
+
+//屏蔽选中
+document.onselectstart = function (event){
+    if(window.event){
+        event = window.event;
+        }
+    try{
+        var the = event.srcElement;
+        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+        return false;
+        }
+        return true;
+        } 
+    catch (e) {
+        return false;
+    }
+}
+//屏蔽复制
+document.oncopy = function (event){
+    if(window.event){
+    event = window.event;
+    }
+    try{
+        var the = event.srcElement;
+        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+        return false;
+        }
+        return true;
+        }
+    catch (e){
+        return false;
+    }
+}
+
+//屏蔽剪切
+document.oncut = function (event){
+    if(window.event){
+    event = window.event;
+    }
+    try{
+        var the = event.srcElement;
+        if(!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+        return false;
+        }
+        return true;
+        }
+    catch (e){
+        return false;
+    }
+}
+
+//屏蔽粘贴
+document.onpaste = function (event){
+    if(window.event){
+        event = window.event;
+        }
+    try{
+        var the = event.srcElement;
+        if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+        return false;
+        }
+        return true;
+        }
+    catch (e){
+        return false;
+    }
+}
+
+</script>
+<style>
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:0.5}
+ol, ul{list-style:none}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after, q:before, q:after{content:'';content:none}
+:focus{outline:0}
+ins{text-decoration:none}
+del{text-decoration:line-through}
+table{border-collapse:collapse;border-spacing:0}
+a{text-decoration:none;color:#fff}
+body{font-family:"Kreon";font-weight:300;color:#444;background:#fff;}
+#switcher{height:54px;z-index:99999;position:fixed;width:100%;top:0;background:#444;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.center{width:100%;padding-top:0}
+.center ul li{float:left;position:relative}
+.top3,.top2{margin-left:30px; line-height:52px;color:#fff;font-family:"微软雅黑"}
+.top2{position:relative;margin-top:15px;font-size:12px;font-weight:normal;background-image:url(/app/article/images/view-erweima.png);background-repeat:no-repeat;background-position:3px center;height:22px;padding-left:25px;line-height:22px;border:1px solid #bbb;padding-right:5px;border-radius:3px;}
+.top2 .vm p{color:#808080;margin:7px 0 0 0; text-align:center;}
+.vm{position:absolute;top:22px;left:-1px;background-color:#fff;height:170px;width:150px;display:none;padding:30px;}
+.top2:hover .vm{display:block}
+.top3 a:hover{text-decoration:none;}
+li.top4 a,li.top5 a,li.top6 a{ font-size:13px;}
+li.top4{float:right!important;margin-right:30px; line-height:52px;}
+li.top4 a{ color:#f8bc06;}
+li.top5{float:right!important; margin-left:12px; margin-right:12px; color:#FFF; font-size:13px; line-height:52px;}
+li.top6{float:right!important; line-height:52px;color: #fff;font-size: 14px;}
+#iframe{margin-top:0}
+.icon-pc{margin-right:18px;margin-top:20px;width:17px;height:16px;background:url(/app/article/images/view-equipment-min.png) no-repeat;margin-left:10px;background-position:0 0;}
+.icon-ipad{margin-right:15px;margin-top:20px;width:17px;height:16px;background:url(/app/article/images/view-equipment-min.png) no-repeat;background-position:-24px 0}
+.icon-mobile{margin-right:15px;margin-top:20px;width:17px;height:16px;background:url(/app/article/images/view-equipment-min.png) no-repeat;background-position:-71px 0}
+.icon-pc:hover, .icon-pc.active{background-position:0 -16px}
+.icon-ipad:hover, .icon-ipad.active{background-position:-24px -16px}
+.icon-mobile:hover, .icon-mobile.active{background-position:-71px -16px}
+#iframe-wrap{height:100%;overflow:hidden;position:relative;top:54px;z-index:50}
+.ipad-width{height:960px!important;margin: 40px auto 90px;padding:175px 100px 114px 100px;width:785px;background:url(/app/article/images/view-equipment-max.png) no-repeat 0 0}
+.ipad-width iframe{height:960px!important}
+.mobile-width{height:417px!important;margin: 40px auto 90px;padding:125px 25px 159px 25px;width:337px;background:url(/app/article/images/view-equipment-max.png) no-repeat 0 -2217px}
+.mobile-width iframe{height:416px!important}
+#by{overflow-y:hidden}
+
+@media screen and (max-width:870px) {
+#switcher{display:none;}
+#iframe-wrap{top:0; bottom:0;}
+/*#equipment{ display:none;}
+.top2,.top4,.top5,.top6{ display:none;}	
+.top3{ margin-left:10px; margin-right:10px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.center ul li{float:none;}*/
+/*小于640屏幕*/
+}
+</style>
+</head>
+<body id="by" style="">
+<div id="switcher">
+<div class="center">
+<ul>
+<div id="equipment">
+<li><a href="javascript:"><div class="icon-pc active"></div></a></li>
+<li><a href="javascript:"><div class="icon-ipad"></div></a></li>
+<li><a href="javascript:"><div class="icon-mobile"></div></a></li>
+</div>
+<li class="top2">
+<a href="#">手机二维码预览</a>
+<div class="vm">
+<div id="output"><canvas width="150" height="150"></canvas></div>
+<p>扫一扫，直接在手机端打开</p>
+</div>
+</li>
+<li class="top3">【<a href="https://www.51qianduan.com/article/style/6" class="blue">纯动画</a> | <a href="https://www.51qianduan.com/article/cate/172" class="blue">动画特效</a>】<a href="https://www.51qianduan.com/article/12993.html" title="js点线几何空间图形特效代码下载演示">js点线几何空间图形特效代码下载演示</a></li>
+<script type="text/javascript">
+			jQuery('#output').qrcode({width:150,height: 150,text: window.location.href});
+			</script>
+<li class="top4 active"><a href="https://www.51qianduan.com/article/12993.html">&gt;&gt;返回上页，即可下载</a></li>
+<li class="top5">|</li>
+<li class="top6"><a href="https://www.51qianduan.com/article/tag/196">html5动画导航菜单</a></li>
+<li class="top6"><a href="https://www.51qianduan.com/article/tag/197">html5图片动画</a></li>
+<li class="top6"><a href="https://www.51qianduan.com/article/tag/198">html5文字动画</a></li>
+<li class="top6"><a href="https://www.51qianduan.com/article/tag/317">html5表情动画</a></li>
+<li class="top6"><a href="https://www.51qianduan.com/article/tag/318">html5线条动画</a></li>
+<li class="top6"><a href="https://www.51qianduan.com/article/tag/319">html5飘落动画</a></li>
+<li class="top6"><a href="https://www.51qianduan.com/article/tag/481">html5光标动画</a></li>
+<li class="top6"><a href="https://www.51qianduan.com/article/tag/480">html5悬停动画</a></li>
+<li class="top6">搜索标签：</li>
+</ul>
+</div>
+</div>
+<div id="iframe-wrap">
+<iframe id="iframe" src="https://www.51qianduan.com/uploadfile/article/2010/03/12993/index.html" frameborder="0" height="692px" width="100%"></iframe>
+</div>
+<script src="https://www.51qianduan.com/app/article/js/extend.func.js" type="text/javascript"></script>
+<div style="display:none;"><script src="https://s13.cnzz.com/z_stat.php?id=1273541249&amp;web_id=1273541249" language="JavaScript"></script><script src="https://c.cnzz.com/core.php?web_id=1273541249&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1273541249" target="_blank" title="站长统计">站长统计</a></div>
+</body></html>

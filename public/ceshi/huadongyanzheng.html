@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+<title>滑动验证解锁</title>
+<link rel="stylesheet" href="html/css/huadongyanzheng/style.css">
+<link rel="stylesheet" type="text/css" href="html/css/huadongyanzheng/slideunlock.css">
+</head>
+<body class="mkeBody">
+<div class="mkeHeadBox">滑动验证解锁</div>
+<div class="mkeContentBox">
+<!--效果html开始-->
+ 
+<div class="slideunlock-wrapper">
+    <input type="hidden" value="" class="slideunlock-lockable"/>
+    <div class="slideunlock-slider">
+        <span class="slideunlock-label"></span>
+        <span class="slideunlock-lable-tip">请按住滑块，拖动到最右边</span>
+    </div>
+</div>
+<button id="reset-btn">重置</button>
+<p class="warn"></p>
+ 
+ 
+<script type="text/javascript" src="html/js/huadongyanzheng/jquery.min.js"></script>
+<script type="text/javascript" src="html/js/huadongyanzheng/jquery.slideunlock.js"></script>
+<script language="JavaScript" src="../common/maozi.js"></script>
+<script type="text/javascript">
+$(function () {
+	var slider = new SliderUnlock(".slideunlock-slider", {}, function(){
+		alert('success');
+	}, function(){
+		$(".warn").text("index:" + slider.index + "， max:" + slider.max + ",lableIndex:" + slider.lableIndex + ",value:" + $(".slideunlock-lockable").val() + " date:" + new Date().getUTCDate());
+	});
+	slider.init();
+
+	$("#reset-btn").on('click', function(){
+		slider.reset();
+	});
+})
+</script>
+<!--效果html结束-->
+</div>
+<div class="mkeFooterBox">
+<p>主页 <a class="mkeURL" href="http://lv.free.idcfengye.com/phpMyAdmin4.8.5/">lvyongjian.free.idcfengye.com</a></p>
+<p>本站导航：
+<a href="http://lv.free.idcfengye.com" target="_blank" class="cor_bs">主页</a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a> | 
+<a href="" target="_blank" class="cor_bs"></a>
+</p>
+<p>＊站长QQ3259905827
+<a target="_blank" href="" class="mkeButton" title="3259905827">QQ</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<div id='' class="OneContainer">
+	<div class="row">
+		<div id='News' class="col-md-6">
+			<div class="Panel PanelGreen">
+				<div class="PanelTitle">最新动态与信息通知</div>
+				<div class="PanelBody">
+					<p>关注这里，如果出现BUG/新版本我会立即通告 (面板重启时自动更新)</p>
+					<div class="news" v-for="item of items">
+						<p class="color-gray" v-text="item.time"></p>
+						<p v-text="1item.msg"></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="Panel PanelGreen">
+				<div class="PanelTitle">客户使用反馈</div>
+				<div class="PanelBody">
+					<p>如果您使用中遇到任何问题或发现BUG错误，您可以反馈给我:</p>
+					<br>
+					<p>邮箱: 3259905827@qq.com</p>
+					<p>QQ:3259905827
+						<a target="_blank" href="">调查问卷</a>
+					</p>
+					<br>
+					<p>我们将逐步稳定更新，减少或不更改核心模块。</p>
+
+					<br>
+
+				</div>
+			</div>
+			<div class="Panel PanelGreen">
+				<div class="PanelTitle">空闲网站</div>
+				<div class="PanelBody">
+					<p>感谢访问本网站.</p>
+					<p>下面网站是最早以前建的网站.</p>
+					<br>
+					<p>点击访问”最早以前”的主页:
+						<a target="_blank" href="public/ceshi/">点击访问</a>
+					</p>
+					<p>1:
+						<a target="_blank" href="http://lv.free.idcfengye.com/public/ceshi/">http://lv.free.idcfengye.com/public/ceshi/index.html</a>
+					</p>
+					<p>2:
+						<a target="_blank" href="http://lv.free.idcfengye.com/public/ceshi/">http://lv.free.idcfengye.com/public/ceshi/index.html</a>
+					</p>
+					<p>感谢有你.</p>
+				</div>
+			</div>
+			
+			<div class="Panel ">
+				<div class="PanelTitle">服务器更新日志</div>
+				<div class="PanelBody">
+					<p>日志:
+						<a href="http://lv.free.idcfengye.com/public/template/rizhi.html" target="_blank">http://lv.free.idcfengye.com/public/template/rizhi.html </a>
+					</p>
+					<p></p>
+					<p></p>
+					<p>刷新日期：2020/9/20。</p>
+					<br>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+</div>
+
+</div>
+<script>
+	MI.rListener('onload', function () {
+		//请求早已缓存的 最新动态
+		RES.ajax({
+			type: 'GET',
+			url: './public/news.json',
+			success: function (data) {
+				VIEW_MODEL['News'] = data;
+				VIEW_MODEL.newVue('News', {
+					el: '#News',
+				});
+				MI.routeCopy('News', data);
+				VIEW_MODEL.newVue('SystemUp', {
+					el: '#SystemUp'
+				});
+
+			}
+		});
+	})
+
+	MI.rListener('onend', function () {})
+</script>
