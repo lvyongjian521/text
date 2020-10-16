@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>个人自序</title>
+	<!-- live2d -->
+	<link rel="stylesheet" type="text/css" href="../common/assets/waifu.css"/>
+    <script src="../common/assets/3.2.1.jquery.min.js"></script>
     <meta name="theme-color" content="#ffc91d"/>
     <link rel="icon" href="static/img/favicon.ico" />
     <link href="static/kico.css" rel="stylesheet" type="text/css"/>
@@ -23,6 +26,20 @@
         <a href="#story">经历</a>
 
     </nav>
+ <!-- live2d -->
+  <div class="waifu">
+     <div class="waifu-tips"></div>
+     <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+     <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+      </div>
+   </div>
 </aside>
 <main>
     <section id="info">
@@ -40,7 +57,7 @@
                     <p>邮箱：<a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=NwQFAg4OBwIPBQB3RkYZVFha">3259905827@qq.com</a></p>
                 </div>
                 <div class="col-l-4">
-                    <p>我是一个热爱钻研计算机技术的少年，从小开始对计算机有极大的兴趣。作为计算机专业的学生，我热爱我的专业并为其投入巨大的热情和精力。希望大家能和我一同热爱计算机！</p>
+                    <p>欢迎访问我的小博客！！</p>
                 </div>
             </div>
         </div>
@@ -104,12 +121,12 @@
             <div class="row">
                 <div class="col-m-8">
                     <ul class="timeline">
-                        <li>2018.09：步入大学 </li>
-                        <li>2018.12: 进入ACM实验室 </li>
-                        <li>2019.05: 参加CCPC竞赛 </li>
-                        <li>2019.08: 参加湖南省ACM竞赛 </li>
-                        <li>2019.11: 进入Maker-lot实验室</li>
-                        <li>2019.12: 建立首个个人博客 </li>
+                        <li>2018.03：开始接触制作网站，会一点html </li>
+                        <li>2018.12: 会制作简单js小特效，css布局 </li>
+                        <li>2019.09: 搭建内网访问网站 </li>
+                        <li>2019.10: 利用PHPstudy和樱花内透搭建第一个能外网访问的网站，并修复很多bug </li>
+                        <li>2020.05: git上上传以前整合的小网站</li>
+                        <li>2020.08: 在gitee（码云）托管代码，搭建小博客等其余网页 </li>
                         <li>---</li>
                     </ul>
                 </div>
@@ -121,13 +138,17 @@
     </section>
 
     <footer>
-        <p>© 2020 By <a href="https://www.oyyandwjw.xyz" title="Chien_W的博客" target="_blank">Chien_W</a>.</p>
+        <p>© 2020 By <a href="https://lv-yongjian.gitee.io/lv/admin/" title="lvyongjian的博客" target="_blank">lvyogjian</a>.</p>
     </footer>
 </main>
 
+<!-- live2d -->
+<script src="../common/assets/waifu-tips.js"></script>
+<script src="../common/assets/live2d.js"></script>
+<script type="text/javascript">initModel("assets/")</script>
 <script src="static/kico.js"></script>
 <script src="static/paul.js"></script>
-<!-- 网易云音乐 -->
-<embed frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="//music.163.com/outchain/player?type=0&id=4950890732&auto=1&height=0"></embed>
+<!-- 网易云音乐
+<embed frameborder="no" border="0" marginwidth="0" marginheight="0" width=0 height=0 src="//music.163.com/outchain/player?type=0&id=4950890732&auto=1&height=0"></embed> -->
 </body>
 </html>
