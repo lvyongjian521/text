@@ -1,0 +1,36 @@
+{
+  "code": 0,
+  "msg": "",
+  "count": 3,
+  "data": [
+    {
+      "usersId": "1",
+      "userName": "吕甬建",
+      "userEmail": "3259905827@qq.com",
+      "userSex": "男",
+      "userStatus": "0",
+      "userGrade": "4",
+      "userEndTime": "2018-01-31 10:00",
+      "userDesc" : "超级管理员"
+    },{
+      "usersId": "2",
+      "userName": "补白...",
+      "userEmail": "xxx@lvyongjian.com",
+      "userSex": "保密",
+      "userStatus": "0",
+      "userGrade": "3",
+      "userEndTime": "2018-01-14 15:35",
+      "userDesc" : "补白..."
+    },
+    {
+      "usersId": "3",
+      "userName": "补白...",
+      "userEmail": "xxx@lvyongjian.com",
+      "userSex": "男",
+      "userStatus": "1",
+      "userGrade": "2",
+      "userEndTime": "2018-01-25 16:25",
+      "userDesc" : "补白..."
+    }
+  ]
+}
