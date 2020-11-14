@@ -31,7 +31,7 @@ $(document).on('copy', function (){
 });
 
 $('.waifu-tool .fui-home').click(function (){
-    //window.location = 'http://lv.free.idcfengye.com';
+    //window.location = 'https://lv-yongjian.gitee.io/lv';
     window.location = window.location.protocol+'//'+window.location.hostname+'/'
 });
 
@@ -48,8 +48,8 @@ $('.waifu-tool .fui-user').click(function (){
 });
 
 $('.waifu-tool .fui-info-circle').click(function (){
-    //window.open('http://lv.free.idcfengye.com');
-    window.open('http://lv.free.idcfengye.com');
+    //window.open('https://lv-yongjian.gitee.io/lv');
+    window.open('https://lv-yongjian.gitee.io/lv');
 });
 
 $('.waifu-tool .fui-cross').click(function (){
@@ -66,7 +66,7 @@ $('.waifu-tool .fui-photo').click(function (){
 
 (function (){
     var text;
-    //var SiteIndexUrl = 'http://lv.free.idcfengye.com/public/login/';  // 手动指定主页
+    //var SiteIndexUrl = 'https://lv-yongjian.gitee.io/lv';  // 手动指定主页
     var SiteIndexUrl = window.location.protocol+'//'+window.location.hostname+'/';  // 自动获取主页
     
     if (window.location.href == SiteIndexUrl) {      // 如果是主页
