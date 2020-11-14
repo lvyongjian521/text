@@ -32,6 +32,33 @@
 					"target": "_blank"
 				}
 			]
+		},
+		{
+			"title": "其余小网站",
+			"icon": "&#xe630;",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "最早以前登录页面",
+					"icon": "&#xe609;",
+					"href": "public/login/index.html",
+					"spread": false
+				},
+				{
+					"title": "个人小博客",
+					"icon": "&#xe609;",
+					"href": "admin/index.html",
+					"spread": false
+				},
+				{
+					"title": "个人小博客",
+					"icon": "&#xe609;",
+					"href": "admin/index.html",
+					"spread": false,
+					"target": "_blank"
+				}
+			]
 		}
 	],
 	"memberCenter": [
